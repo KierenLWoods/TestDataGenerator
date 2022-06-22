@@ -41,6 +41,12 @@ namespace DataGeneratorLibrary.Services
                       returnDataList.AddRange(sql.CreateSQLData(tableName));
                         break;
                     }
+                    case (DataExportEnums.Json):
+                    {
+                        JsonDataExtraction json = new JsonDataExtraction();
+                        returnDataList.AddRange(json.CreateJsonObject(testData));
+                        break;
+                    }
             }
             return returnDataList;
         }

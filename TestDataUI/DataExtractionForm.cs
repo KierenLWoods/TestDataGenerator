@@ -19,9 +19,9 @@ namespace TestDataUI
         public DataExtractionForm(List<IBaseExtractionData> data)
         {
             
-            sqlData = new BindingList<SQLObject>(data.ConvertAll(o => (SQLObject)o));
+           // sqlData = new BindingList<SQLObject>(data.ConvertAll(o => (SQLObject)o));
             InitializeComponent();
-           dataGridView1.DataSource = SourceHelper.AutoCast(sqlData);
+           dataGridView1.DataSource = SourceHelper.AutoCast(data);
         }
 
        
