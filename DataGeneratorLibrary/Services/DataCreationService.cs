@@ -57,6 +57,13 @@ namespace DataGeneratorLibrary.Services
                                 createdDataObject.Properties.Add(nameCreationService.GenerateData(row.ColumnName, nameHelper.GetNamesFromFile("\\NameFiles\\Surnames.txt")));
                                 break;
                             }
+                        case (DataTypeEnums.FullName):
+                            {
+                                NameHelper<FullName> nameHelper = new NameHelper<FullName>();
+                                NameCreationService<FullName> nameCreationService = new NameCreationService<FullName>();
+                                createdDataObject.Properties.Add(nameCreationService.GenerateData(row.ColumnName, nameHelper.GetNamesFromFile("\\NameFiles\\FullNames.txt")));
+                                break;
+                            }
                     }
                 }
                 _createdDataObjectList.Add(createdDataObject);

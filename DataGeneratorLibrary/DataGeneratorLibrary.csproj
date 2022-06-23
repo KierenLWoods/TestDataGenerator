@@ -18,6 +18,9 @@
     <None Update="NameFiles\FirstNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="NameFiles\FullNames.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="NameFiles\Surnames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
