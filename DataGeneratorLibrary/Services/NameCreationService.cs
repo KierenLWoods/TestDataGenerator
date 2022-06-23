@@ -7,19 +7,17 @@ using System.Threading.Tasks;
 
 namespace DataGeneratorLibrary.Services
 {
-    public class LastNameDataCreationService
+    public class NameCreationService<T> where T : IName
     {
-        //This class should return a random first Name
         private static Random rand = new Random(DateTime.Now.Second);
-
-        public CreatedDataPropertiesModel GenerateData(string columnName)
-        {           
-            SurnameFileReader surnames = SurnameFileReader.GetSurnameFileReader();           
+       
+        public CreatedDataPropertiesModel GenerateData(string columnName,List<T> nameObjects)
+        {
+            
             var createdPropertiesObject = new CreatedDataPropertiesModel { ColumnName = columnName };
-            int index = rand.Next(0, surnames.Surnames.Count);
-            createdPropertiesObject.Value = surnames.Surnames[index].Surname;
+            int index = rand.Next(0, nameObjects.Count);
+            createdPropertiesObject.Value = nameObjects[index].Name;
             return createdPropertiesObject;
         }
     }
-
 }

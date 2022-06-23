@@ -1,5 +1,6 @@
 ﻿using DataGeneratorLibrary.DataModels;
 using DataGeneratorLibrary.Enums;
+using DataGeneratorLibrary.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,14 +45,16 @@ namespace DataGeneratorLibrary.Services
                     {
                         case (DataTypeEnums.FirstName):
                             {
-                                FirstNameDataCreationService firstNameDataCreator = new FirstNameDataCreationService();
-                                createdDataObject.Properties.Add(firstNameDataCreator.GenerateData(row.ColumnName));
+                                NameHelper<FirstName> nameHelper = new NameHelper<FirstName>();                                
+                                NameCreationService<FirstName> nameCreationService = new NameCreationService<FirstName>();                         
+                                createdDataObject.Properties.Add(nameCreationService.GenerateData(row.ColumnName, nameHelper.GetNamesFromFile("\\NameFiles\\FirstNames.txt")));
                                 break;
                             }
                         case (DataTypeEnums.LastName):
                             {
-                                LastNameDataCreationService lastNameDataCreator = new LastNameDataCreationService();
-                                createdDataObject.Properties.Add(lastNameDataCreator.GenerateData(row.ColumnName));
+                                NameHelper<Surnames> nameHelper = new NameHelper<Surnames>();
+                                NameCreationService<Surnames> nameCreationService = new NameCreationService<Surnames>();
+                                createdDataObject.Properties.Add(nameCreationService.GenerateData(row.ColumnName, nameHelper.GetNamesFromFile("\\NameFiles\\Surnames.txt")));
                                 break;
                             }
                     }

@@ -22,8 +22,7 @@ namespace TestDataUI
         DataExportEnums exportEnum;
         public TestDataGenerator()
         {
-            InitializeComponent();
-            SurnameFileReader surname = SurnameFileReader.GetSurnameFileReader();
+            InitializeComponent();            
             testDataObject = new TestDataObject();
             var comboBox = (DataGridViewComboBoxColumn)dataGridView1.Columns["DataType"];
             comboBox.DataSource = Enum.GetValues(typeof(DataTypeEnums));

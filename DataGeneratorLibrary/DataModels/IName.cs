@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataGeneratorLibrary.DataModels
 {
-    public class Surnames:IName
+    public interface IName
     {
-        public string Name { get; set; }
+        string Name { get; set; }
     }
 }

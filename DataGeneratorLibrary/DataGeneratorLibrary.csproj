@@ -5,11 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\FirstNameDataCreationService.cs" />
+    <Compile Remove="Services\FullNameCreationService.cs" />
+    <Compile Remove="Services\LastNameDataCreationService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Surnames.txt">
+    <None Update="NameFiles\FirstNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NameFiles\Surnames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataGeneratorLibrary.DataModels
 {
-    public class Surnames:IName
+    public class FirstName : IName
     {
         public string Name { get; set; }
     }
